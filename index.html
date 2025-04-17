@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-laugh-squint"></i> Meme Collection</h1>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search memes...">
+                <button id="searchBtn" class="primary-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <i class="fas fa-images"></i>
+                <span id="totalMemes">0</span>
+                <p>Total Memes</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-tags"></i>
+                <span id="totalCategories">0</span>
+                <p>Categories</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-star"></i>
+                <span id="featuredMemes">0</span>
+                <p>Featured</p>
+            </div>
+        </div>
+
+        <div class="meme-controls">
+            <button id="addMemeBtn" class="primary-btn">
+                <i class="fas fa-plus"></i> Add New Meme
+            </button>
+            <div class="filter-controls">
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="funny">Funny</option>
+                    <option value="cute">Cute</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="animals">Animals</option>
+                    <option value="reaction">Reaction</option>
+                    <option value="movie">Movie</option>
+                </select>
+                <select id="sortFilter">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="az">A-Z</option>
+                    <option value="za">Z-A</option>
+                </select>
+                <button id="toggleViewBtn" class="view-btn">
+                    <i class="fas fa-th-large"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="view-options">
+            <span class="view-option active" data-view="grid"><i class="fas fa-th-large"></i> Grid</span>
+            <span class="view-option" data-view="list"><i class="fas fa-list"></i> List</span>
+        </div>
+
+        <div class="featured-section" id="featuredSection">
+            <h2><i class="fas fa-star"></i> Featured Memes</h2>
+            <div class="featured-carousel" id="featuredCarousel">
+                <!-- Featured memes will be added here -->
+            </div>
+        </div>
+
+        <h2 class="section-title"><i class="fas fa-images"></i> All Memes</h2>
+        <div class="meme-grid" id="memeGrid">
+            <!-- Memes will be dynamically added here -->
+        </div>
+
+        <!-- Add Meme Modal -->
+        <div id="addMemeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add New Meme</h2>
+                <form id="addMemeForm">
+                    <div class="form-group">
+                        <label for="memeTitle">Title</label>
+                        <input type="text" id="memeTitle" required placeholder="Enter meme title">
+                    </div>
+                    <div class="form-group">
+                        <label for="memeUrl">Image URL</label>
+                        <input type="url" id="memeUrl" required placeholder="Enter image URL">
+                    </div>
+                    <div class="form-group">
+                        <label for="memeCategory">Category</label>
+                        <select id="memeCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="funny">Funny</option>
+                            <option value="cute">Cute</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="animals">Animals</option>
+                            <option value="reaction">Reaction</option>
+                            <option value="movie">Movie</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="memeDescription">Description</label>
+                        <textarea id="memeDescription" rows="3" placeholder="Enter meme description"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="memeFeatured">
+                        <label for="memeFeatured">Feature this meme</label>
+                    </div>
+                    <button type="submit" class="primary-btn">
+                        <i class="fas fa-plus"></i> Add Meme
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- View Meme Modal -->
+        <div id="viewMemeModal" class="modal">
+            <div class="modal-content view-meme-modal">
+                <span class="close">&times;</span>
+                <div id="viewMemeContent">
+                    <!-- Meme details will be shown here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Meme Collection</h3>
+                    <p>Collect and organize your favorite memes in one place.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-reddit"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> adityav1976@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8767412492</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Meme Collection. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
