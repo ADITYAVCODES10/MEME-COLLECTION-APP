@@ -30,7 +30,7 @@ let memes = [
     {
         id: 2,
         title: "Cute Puppy",
-        imageUrl: "24812-1080x2280-mobile-hd-puppy-background-photo.jpg",
+        imageUrl: "https://i.imgur.com/7l5zQXU.jpg",
         category: "cute",
         description: "Just a happy puppy brightening your day",
         featured: false,
@@ -40,7 +40,7 @@ let memes = [
     {
         id: 3,
         title: "Gaming Life",
-        imageUrl: "gamer-memes-sun-20240929.jpg",
+        imageUrl: "https://i.imgur.com/3oGP0UN.jpg",
         category: "gaming",
         description: "Every gamer knows this feeling",
         featured: true,
@@ -50,7 +50,7 @@ let memes = [
     {
         id: 4,
         title: "Monday Mood",
-        imageUrl: "43ada27d54915d699b275a313299145e.jpg",
+        imageUrl: "https://i.imgur.com/LF0RMv3.jpg",
         category: "funny",
         description: "When the alarm goes off on Monday morning",
         featured: false,
@@ -60,7 +60,7 @@ let memes = [
     {
         id: 5,
         title: "Movie Night",
-        imageUrl: "not-even-watching-movie-yes-am.png",
+        imageUrl: "https://i.imgur.com/hTuFkL9.jpg",
         category: "movie",
         description: "When the movie starts getting interesting just as you're falling asleep",
         featured: true,
